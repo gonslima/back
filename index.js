@@ -22,7 +22,7 @@ app.listen(PORT, () => {
 // Obtendo os parametros passados pela linha de comando
 var userArgs = process.argv.slice(2);
 var mongoURL = "mongodb+srv://guinho:Pokemon.15@cluster0.ohqj5gb.mongodb.net/tarefasDB";
-
+ 
 //Configurando a conexao com o Banco de Dados
 var mongoose = require('mongoose');
 mongoose.connect(mongoURL, {
@@ -38,5 +38,6 @@ db.on('error', (error) => {
 })
 db.once('connected', () => {
     console.log('Database Connected');
+    console.log(db);
 })
 module.exports = app;
